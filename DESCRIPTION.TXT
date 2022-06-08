@@ -1,0 +1,10 @@
+------------------------------------------------------------------------------------------------------------------------------
+
+***   ERROR    ***
+1. An unhandled exception occurred: ENOENT: no such file or directory, lstat 'C:\UDEMY\DatingApp\client\dist'
+
+tada treba prepraviti kod u package.json
+./dist/ngx-bootstrap/datepicker/bs-datepicker.css" u
+./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
+
+------------------------------------------------------------------------------------------------------------------------------
