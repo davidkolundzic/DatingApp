@@ -6,8 +6,36 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="assets/themes/bootstrap.css" > -->
+  <!-- <link id="client-theme" rel="stylesheet" href="assets/themes/cyborg.css" title="cyborg" disabled> -->
+  <!-- <link rel="stylesheet" href="assets/themes/united.css" title="united" > -->
 </head>
-<body>
+<body id="mainApp">
   <app-root></app-root>
+  
+  <script>
+    function checkTheme (){
+      var theme = localStorage.getItem('my-theme');
+      if(theme) return theme;
+    }
+
+    function setTheme(){
+      var theme = 'bootstrap';
+      var headElement = document.getElementsByTagName('head')[0];
+      
+      console.log(checkTheme())
+      var localTheme = checkTheme();
+      
+      if(localTheme) theme = localTheme;
+      
+      var newLinkEl = this.document.createElement('link');
+      newLinkEl.rel = 'stylesheet';
+      newLinkEl.id = 'client-theme';
+      newLinkEl.href = `assets/themes/${theme}.css`;
+      headElement.appendChild(newLinkEl);
+    }
+    setTheme();
+  </script>
 </body>
 </html>
